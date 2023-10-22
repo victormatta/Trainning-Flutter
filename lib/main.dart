@@ -37,12 +37,13 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(widget.titleApp!),
+          backgroundColor: const Color.fromARGB(255, 255, 112, 102),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
                   widget.textMain1!,
@@ -67,7 +68,7 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(widget.textMain2!,
                     style: const TextStyle(
@@ -81,7 +82,7 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(widget.textMain3!,
                     style: const TextStyle(
@@ -103,6 +104,7 @@ class _MyAppState extends State<MyApp> {
             )
           ],
         ),
+        backgroundColor: const Color.fromARGB(255, 205, 212, 240),
       ),
     );
   }
