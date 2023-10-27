@@ -37,74 +37,59 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         appBar: AppBar(
           title: Text(widget.titleApp!),
-          backgroundColor: const Color.fromARGB(255, 255, 112, 102),
+          backgroundColor: const Color.fromARGB(255, 0, 122, 31),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  widget.textMain1!,
-                  style: const TextStyle(
-                      fontSize: 25, backgroundColor: Colors.red),
-                ),
-                Text(
-                  widget.textMain1!,
-                  style: const TextStyle(
-                      fontSize: 25, backgroundColor: Colors.red),
-                ),
-                Text(
-                  widget.textMain1!,
-                  style: const TextStyle(
-                      fontSize: 25, backgroundColor: Colors.red),
-                ),
-                Text(
-                  widget.textMain1!,
-                  style: const TextStyle(
-                      fontSize: 25, backgroundColor: Colors.red),
-                ),
-              ],
+            Center(
+              child: Stack(
+                alignment: AlignmentDirectional.topCenter,
+                children: [
+                  Image.asset(
+                    '../assets/images/piedpiper.jpeg',
+                    width: 100,
+                    height: 100,
+                  ),
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(widget.textMain2!,
-                    style: const TextStyle(
-                        fontSize: 25, backgroundColor: Colors.blue)),
-                Text(widget.textMain2!,
-                    style: const TextStyle(
-                        fontSize: 25, backgroundColor: Colors.blue)),
-                Text(widget.textMain2!,
-                    style: const TextStyle(
-                        fontSize: 25, backgroundColor: Colors.blue)),
-              ],
+            const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 300,
+                    child: Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ), // Espaçamento vertical entre os inputs
+                  SizedBox(
+                    width: 300,
+                    child: Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(widget.textMain3!,
-                    style: const TextStyle(
-                        fontSize: 25, backgroundColor: Colors.yellow)),
-                Text(widget.textMain3!,
-                    style: const TextStyle(
-                        fontSize: 25, backgroundColor: Colors.yellow)),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  widget.textMain4!,
-                  style: const TextStyle(
-                      fontSize: 25, backgroundColor: Colors.purple),
-                ),
-              ],
+            const SizedBox(
+              height: 50,
             )
           ],
         ),
-        backgroundColor: const Color.fromARGB(255, 205, 212, 240),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
     );
   }
