@@ -18,13 +18,13 @@ class MyApp extends StatefulWidget {
   final String? textMain4;
 
   const MyApp({
-    super.key,
+    Key? key,
     this.titleApp,
     this.textMain1,
     this.textMain2,
     this.textMain3,
     this.textMain4,
-  });
+  }) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -39,55 +39,54 @@ class _MyAppState extends State<MyApp> {
           title: Text(widget.titleApp!),
           backgroundColor: const Color.fromARGB(255, 0, 122, 31),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: Stack(
-                alignment: AlignmentDirectional.topCenter,
-                children: [
-                  Image.asset(
-                    '../assets/images/piedpiper.jpeg',
-                    width: 100,
-                    height: 100,
-                  ),
-                ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                '../assets/images/piedpiper.jpeg',
+                width: 90,
+                height: 90,
               ),
-            ),
-            const Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 300,
-                    child: Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Email',
-                        ),
-                      ),
+              const SizedBox(
+                width: 300,
+                child: Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: Text('Email'),
                     ),
                   ),
-                  SizedBox(
-                    height: 10,
-                  ), // Espaçamento vertical entre os inputs
-                  SizedBox(
-                    width: 300,
-                    child: Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                        ),
-                      ),
+                ),
+              ),
+              const SizedBox(
+                width: 300,
+                child: Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      label: Text('Password'),
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: 50,
-            )
-          ],
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                width: 200,
+                child: Expanded(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(255, 0, 161, 40),
+                      ),
+                    ),
+                    child: const Text('Login'),
+                    onPressed: () {},
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
